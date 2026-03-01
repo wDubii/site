@@ -1,11 +1,9 @@
 {
   "version": 2,
+  "public": true,
   "cleanUrls": true,
   "outputDirectory": "Distribution",
   "rewrites": [
-    {
-      "source": "/",
-      "destination": "/Main.html"
-    }
+    { "source": "/", "destination": "/Main.html" }
   ]
 }
