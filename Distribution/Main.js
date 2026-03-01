@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const Theme = Html.classList.contains("dark") ? "Dark" : "Light"
 
         const SongCounts = {
-            Dark: 1,
+            Dark: 2,
             Light: 1
         }
 
