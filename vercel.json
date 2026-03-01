@@ -1,9 +1,15 @@
 {
   "version": 2,
-  "public": true,
-  "cleanUrls": true,
-  "outputDirectory": "Distribution",
-  "rewrites": [
-    { "source": "/", "destination": "/Main.html" }
+  "builds": [
+    {
+      "src": "Source/Express.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "Source/Express.js"
+    }
   ]
 }

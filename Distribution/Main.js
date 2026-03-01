@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const ThemeToggle = document.getElementById("ThemeToggle")
     const VolumeControl = document.getElementById("VolumeControl")
     const VolumeFill = document.getElementById("VolumeFill")
-          const YearElement = document.getElementById('year')
+    const YearElement = document.getElementById('year')
     const Html = document.documentElement
 
     // Volume Control
