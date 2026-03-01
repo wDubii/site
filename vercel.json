@@ -1,10 +1,11 @@
 {
   "version": 2,
   "cleanUrls": true,
+  "outputDirectory": "Distribution",
   "rewrites": [
     {
       "source": "/",
-      "destination": "/Source/Main.html"
+      "destination": "/Main.html"
     }
   ]
 }
