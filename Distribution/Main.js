@@ -9,6 +9,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const YearElement = document.getElementById('year')
     const Html = document.documentElement
 
+    const SetRandomSong = () => {
+        if (!Music) return
+
+        const Theme = Html.classList.contains("dark") ? "Dark" : "Light"
+
+        const SongCounts = {
+            Dark: 1,
+            Light: 1
+        }
+
+        const MaxSongs = SongCounts[Theme] || 1
+        const RandomNumber = Math.floor(Math.random() * MaxSongs) + 1
+
+        Music.src = `/Songs/${Theme}/${RandomNumber}.mp3`
+        Music.load()
+        Music.play().catch(Error => console.log("Audio play failed:", Error))
+    }
+
     // Volume Control
     if (VolumeControl && VolumeFill && Music) {
         Music.volume = 0.15
@@ -50,9 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 FloatingControls.classList.add("flex")
                 void MainContent.offsetWidth
                 MainContent.style.opacity = "1"
-                if (Music) {
-                    Music.play().catch((Error) => console.log("Audio play failed:", Error))
-                }
+                    SetRandomSong()
             }, 500)
         })
     }
@@ -79,11 +95,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             window.getComputedStyle(Css).opacity
             document.head.removeChild(Css)
+                                SetRandomSong()
         })
 
     }
 
-  YearElement.textContent = new Date().getFullYear()
+    YearElement.textContent = new Date().getFullYear()
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
